@@ -1,1 +1,0 @@
-print('Comprobando compatibilidada github y bitbucket')
