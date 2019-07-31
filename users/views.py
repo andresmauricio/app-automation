@@ -12,7 +12,7 @@ def login_view(request):
 
         if user:
             login(request, user)
-            return redirect('https://google.com')
+            return redirect('dash')
         else: 
             return render(request, 'users/login.html', {'error' : 'Usuario o Contraseña Invalidos'})
     
