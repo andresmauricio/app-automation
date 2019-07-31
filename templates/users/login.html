@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Login!</title>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .splash-container {
+        width: 100%;
+        max-width: 375px;
+        padding: 15px;
+        margin: auto;
+    }
+.splash-container .card-header {
+        padding: 20px;
+    }
+    </style>
 </head>
 <body>
 
@@ -11,26 +36,28 @@
         <p>{{ error }}</p>
     {% endif %}
     
-    <div class="container >
-        <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
+    <div class="splash-container">
+        <div class="card">
+            <div class="card-header text-center">
+            <span>Ingrese sus Datos</span>      
+            </div>
+            <div class="card-body">
+                    <form method="POST" action="{% url "login" %}">
+                            {% csrf_token %}
                         <div class="form-group">
-                                <form method="POST" action="{% url "login" %}">
-                
-                
-                                        {% csrf_token %}
-                                
-                                        <input  class="form-text text-muted" type="text" placeholder="Usuario" name="username" required="True">
-                                        <input  class="form-text text-muted" type="password" placeholder="Contraseña" name="password">
-                                
-                                        <button class="btn btn-success" type="submit"> Iniciar</button>
-                                
-                                    </form>
-                           </div>
-                </div>
-            
+                            <input class="form-control form-control-lg" type="text" placeholder="Usuario" name="username" required="True">
+                        </div>       
+                        
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="password" placeholder="Contraseña" name="password" required="True">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-lg btn-block" type="submit"> Iniciar</button>
+                        </div>        
+                   </form>
+            </div>
         </div>
-           
+                                     
     </div>
     
 </body>
