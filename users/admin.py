@@ -7,4 +7,4 @@ from users.models import Profile
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'last_name', 'position')
+    list_display = ('first_name', 'last_name', 'position')

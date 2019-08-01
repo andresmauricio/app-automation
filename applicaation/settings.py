@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Local apps 
-    'users',
-    'control'
+    'control',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'applicaation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'automation-app',
+        'NAME': 'db_leonisa',
         'USER':'postgres',
         'PASSWORD' : 'andres98',
         'HOST': 'localhost',
