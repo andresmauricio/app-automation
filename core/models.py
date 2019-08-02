@@ -30,6 +30,13 @@ class Process(models.Model):
     
     id_process = models.AutoField(primary_key = True)
     name_process = models.CharField( max_length=50)
+    type_process = models.CharField( max_length=50)
+    temperature_initial = models.IntegerField()
+    temperature_ideal = models.IntegerField()
+    temperature_cooling = models.IntegerField()
+    time_process = models.IntegerField()
+    color_process = models.CharField(max_length=50)
+
     id_machine = models.ManyToManyField('Machine')
 
     def __str__(self):
