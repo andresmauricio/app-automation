@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 #Models
-from core.models import Factory, Machine, Process, ProductFinisehd, Material, Order 
+from core.models import Factory, Machine, Process, ProductFinisehd, Material, Order, ProcessMachineForTime
 
 
 @admin.register(Factory)
@@ -27,6 +27,10 @@ class MaterialAdmin(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('id_order','quality')
+
+@admin.register(ProcessMachineForTime)
+class ProcessMachineAdmin(admin.ModelAdmin):
+    list_display = ('id_time_process', 'time_process')
 
 
 
