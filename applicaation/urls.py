@@ -16,6 +16,13 @@ urlpatterns = [
     path('signup/', users_views.signup_view, name="signup"),
     path('home/', control_views.dashboard_view, name='dash'),
 
-    url(r'^fabricas/',include('core.urls'))
+    url(r'^fabricas/',include('core.urlsFactory')),
+    url(r'^maquinas/',include('core.urlsMachine')),
+    url(r'^procesos/',include('core.urlsProcess')),
+    url(r'^producto-terminado/',include('core.urlsFp')),
+    url(r'^material/',include('core.urlsMaterial')),
+    url(r'^pedido/',include('core.urlsOrder')),
+    url(r'^tiempo/',include('core.urlsTime')),
     
+        
 ]

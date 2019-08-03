@@ -37,7 +37,7 @@ class Process(models.Model):
     time_process = models.IntegerField()
     color_process = models.CharField(max_length=50)
 
-    id_machine = models.ManyToManyField('Machine')
+    id_machine = models.ForeignKey('Machine', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name_process
@@ -47,8 +47,8 @@ class ProductFinisehd(models.Model):
 
     id_product_finished = models.AutoField(primary_key = True)
     name_product = models.CharField( max_length=50)
-    id_process = models.ManyToManyField('Process')
-    id_material =models.ForeignKey('Material',on_delete=models.CASCADE)
+    process = models.ManyToManyField('Process')
+    material =models.ForeignKey('Material',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name_product    
@@ -73,8 +73,8 @@ class Order(models.Model):
 class ProcessMachineForTime(models.Model):
     id_time_process = models.AutoField(primary_key= True)
     time_process = models.IntegerField()
-    id_machine = models.ForeignKey('Machine',on_delete=models.CASCADE)
-    id_process = models.ForeignKey('Process',on_delete=models.CASCADE)
+    machine = models.ForeignKey('Machine',on_delete=models.CASCADE)
+    process = models.ForeignKey('Process',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.time_process
