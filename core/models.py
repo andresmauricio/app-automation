@@ -20,7 +20,7 @@ class Machine(models.Model):
     id= models.AutoField(primary_key = True)
     name_machine = models.CharField(max_length=50)
     process_machine = models.CharField(max_length=50)
-    id_process = models.ManyToManyField('Process')
+    # id_process = models.ManyToManyField('Process')
 
     def __str__(self):
         return self.name_machine
